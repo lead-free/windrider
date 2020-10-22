@@ -1,3 +1,3 @@
-# RindRider-Fitted Firmware
+# WindRider-Fitted Firmware
 
 Coming soon...
