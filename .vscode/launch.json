@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "arm-none-eabi-gdb",
+            "executable": "${workspaceRoot}/build/Debug/bin/windrider_fitted_2.elf",
+            "target": "localhost:2331",
+            "remote": true,
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText",
+            "gdbpath": "/Applications/ARM/bin/arm-none-eabi-gdb", 
+            "autorun": ["load", "break main"]
+          }
+    ]
+}
