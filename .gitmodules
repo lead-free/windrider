@@ -14,3 +14,6 @@
 [submodule "libraries/stm32_mw_usb_device"]
 	path = libraries/stm32_mw_usb_device
 	url = https://github.com/STMicroelectronics/stm32_mw_usb_device.git
+[submodule "libraries/TMC-API"]
+	path = libraries/TMC-API
+	url = https://github.com/trinamic/TMC-API.git
