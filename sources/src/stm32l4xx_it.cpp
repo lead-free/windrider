@@ -21,6 +21,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32l4xx_it.h"
+#include "HeartBeat.h"
+#include "SuctionControl.h"
+#include "TMC5130.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -181,13 +184,10 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-  /* USER CODE BEGIN SysTick_IRQn 0 */
 
-  /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
-  /* USER CODE BEGIN SysTick_IRQn 1 */
-
-  /* USER CODE END SysTick_IRQn 1 */
+  HeartBeat::tick();
+ 
 }
 
 /******************************************************************************/
@@ -211,6 +211,22 @@ void USB_IRQHandler(void)
   /* USER CODE END USB_IRQn 1 */
 }
 
+/**
+  * @brief This function handles ADC1 and ADC2 interrupts.
+  */
+void ADC1_2_IRQHandler(void)
+{
+  /* USER CODE BEGIN ADC1_2_IRQn 0 */
+
+  /* USER CODE END ADC1_2_IRQn 0 */
+  SuctionControl::adc_interrupt_handler();
+  /* USER CODE BEGIN ADC1_2_IRQn 1 */
+  /* USER CODE END ADC1_2_IRQn 1 */
+}
+void SPI1_IRQHandler(void) {
+
+  //TMC5130::tick();
+}
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

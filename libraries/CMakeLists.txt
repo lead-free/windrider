@@ -14,7 +14,10 @@ target_sources(${PROJECT_NAME}.elf PUBLIC
 #file(GLOB SOURCES stm32l4xx_hal_driver/Src/stm32l4xx_hal_*)
 target_sources(${PROJECT_NAME}.elf PUBLIC 
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal.c
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_adc.c
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_adc_ex.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_cortex.c
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_dma.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_gpio.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_pcd.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_pcd_ex.c
@@ -22,7 +25,9 @@ target_sources(${PROJECT_NAME}.elf PUBLIC
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_pwr_ex.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_rcc.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_rcc_ex.c
-
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_spi.c
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_tim.c
+                ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_tim_ex.c            
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_ll_usb.c)
 
 # Collect USB CDC Driver.

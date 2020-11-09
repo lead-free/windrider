@@ -7,17 +7,18 @@ cmake_minimum_required(VERSION 3.10)
 include(cmake/yaccs/yaccs.cmake)
 
 # Define the project.
-project(windrider_fitted_2 ASM C CXX)
+project(windrider ASM C CXX)
 
 set(LINKER_SCRIPT ${CMAKE_CURRENT_SOURCE_DIR}/sources/STM32L412KBTx_FLASH.ld)
 
-add_executable(${PROJECT_SOURCE_DIR}.elf)
+add_executable(${PROJECT_NAME}.elf)
 
 # Add stuff from the sources directory.
 add_subdirectory(sources/)
 add_subdirectory(libraries/)
 
-add_definitions(-DSTM32L412xx)
+add_definitions(-DSTM32L412xx -DHAL_TIM_MODULE_ENABLED -DHAL_ADC_MODULE_ENABLED -DRCC_CCIPR_ADCSEL -DHAL_SPI_MODULE_ENABLED)
+
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)
