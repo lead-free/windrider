@@ -1,18 +1,18 @@
 # List header locations.
-target_include_directories(${PROJECT_NAME}.elf PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
                             CMSIS_5/CMSIS/Core/Include
                             cmsis_device_l4/Include
                             stm32l4xx_hal_driver/Inc
                             stm32_mw_usb_device/Core/Inc
                             stm32_mw_usb_device/Class/CDC/Inc)
 
-target_sources(${PROJECT_NAME}.elf PUBLIC 
+target_sources(${PROJECT_NAME} PUBLIC 
                 ${CMAKE_CURRENT_SOURCE_DIR}/cmsis_device_l4/Source/Templates/system_stm32l4xx.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/cmsis_device_l4/Source/Templates/gcc/startup_stm32l412xx.s)
 
 # Collect HAL Driver source files.
 #file(GLOB SOURCES stm32l4xx_hal_driver/Src/stm32l4xx_hal_*)
-target_sources(${PROJECT_NAME}.elf PUBLIC 
+target_sources(${PROJECT_NAME} PUBLIC 
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_adc.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_hal_adc_ex.c
@@ -31,7 +31,7 @@ target_sources(${PROJECT_NAME}.elf PUBLIC
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32l4xx_hal_driver/Src/stm32l4xx_ll_usb.c)
 
 # Collect USB CDC Driver.
-target_sources(${PROJECT_NAME}.elf PUBLIC 
+target_sources(${PROJECT_NAME} PUBLIC 
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32_mw_usb_device/Core/Src/usbd_ioreq.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32_mw_usb_device/Core/Src/usbd_ctlreq.c
                 ${CMAKE_CURRENT_SOURCE_DIR}/stm32_mw_usb_device/Core/Src/usbd_core.c
