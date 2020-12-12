@@ -28,7 +28,7 @@
   * @brief  The application entry point.
   * @retval int
   */
-int main(void) {
+void main() {
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();

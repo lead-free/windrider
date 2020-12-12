@@ -113,9 +113,9 @@ namespace TMC5130{
         write(TMC5130_XTARGET, 0x0);
         write(TMC5130_XACTUAL, 0x0); // Home
         write(TMC5130_VACTUAL, 0x0);
-        write(TMC5130_A1, 1000); // A1 = 250 First acceleration
+        write(TMC5130_A1, 2000); // A1 = 250 First acceleration
         write(TMC5130_V1, 10000); // V1 = 50 000 Acceleration threshold velocity V1
-        write(TMC5130_AMAX, 500); // AMAX = 500 Acceleration above V1
+        write(TMC5130_AMAX, 2000); // AMAX = 500 Acceleration above V1
         write(TMC5130_VMAX, 200000); // VMAX = 200 000
         write(TMC5130_DMAX, 700); // DMAX = 700 Deceleration above V1
         write(TMC5130_D1, 1400); // D1 = 1400 Deceleration below V1

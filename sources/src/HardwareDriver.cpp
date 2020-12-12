@@ -20,7 +20,7 @@ namespace HardwareDriver{
     /**
     * @return status from execution of the previous command..
     */
-    const std::string get_status(void){
+    const std::string& get_status(void){
         return status;
     }
 
@@ -87,7 +87,7 @@ namespace HardwareDriver{
         // Convert argument strings to integers.
         const auto channel = std::stoul(args.front());
 
-        if(not (0 <= channel <= 3)){
+        if(not (0 <= channel and  channel <= 4)){
 
             status = arguments_out_of_range;
             return;
@@ -120,7 +120,7 @@ namespace HardwareDriver{
 
         const auto current_ma = std::stoul(args.at(1));
 
-        if(not (0 <= channel <= 1500)){
+        if(not (0 <= current_ma <= 1500)){
 
             status = arguments_out_of_range;
             return;
@@ -293,6 +293,7 @@ namespace HardwareDriver{
 
         TMC5130::move_absolute(pose);
 
+        HAL_Delay(1000);
         while(not TMC5130::position_reached()){}
         
         status = response_ok;

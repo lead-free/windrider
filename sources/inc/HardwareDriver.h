@@ -29,7 +29,7 @@ namespace HardwareDriver {
     /**
     * @return status from execution of the previous command..
     */
-    const std::string get_status(void);
+    const std::string& get_status(void);
 
     void gpio_init(void);
     void initialize(void);

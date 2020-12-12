@@ -54,7 +54,7 @@ public:
      * @brief Returns the current usb queue size.
      * @return usb queue size
      */
-    const size_t get_queue_size(void){
+    size_t get_queue_size(void){
 
         if((not _command_queue.empty()) and (_command_queue.back().back() != control_element))
             return 0;
